@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  console.log("Validation function called"); // For debugging
+  
+  let selection = document.forms["myForm"]["options"].value;
+  if (selection == "") {
+    alert("Please select an option");
+    return false;
+  }
+  
+  // If the form is valid, display the selected option
+  document.getElementById("result").innerHTML = 
+    "Selected Option: " + selection;
+  
+  return false; // Prevent form submission for demonstration
+}
+</script>
+</head>
+<body>
+
+<h2>JavaScript Validation</h2>
+
+<form name="myForm" onsubmit="return validateForm()" method="post">
+  Select an option:
+  <select name="options">
+    <option value="">--Select an option--</option>
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select><br><br>
+  
+  <input type="submit" value="Submit">
+</form>
+
+<div id="result" style="margin-top: 20px;"></div>
+
+</body>
+</html>
